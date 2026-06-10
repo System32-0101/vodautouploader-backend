@@ -1,0 +1,10 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: kickdb
+    environment:
+      POSTGRES_DB: kickdb
+      POSTGRES_USER: kick
+      POSTGRES_PASSWORD: kick123
+    ports:
+      - "5432:5432"

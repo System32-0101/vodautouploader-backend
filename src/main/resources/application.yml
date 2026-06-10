@@ -1,0 +1,42 @@
+server:
+  forward-headers-strategy: framework
+
+spring:
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/kickdb}
+    username: ${DB_USER:kick}
+    password: ${DB_PASSWORD:kick123}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    open-in-view: false
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: ${GOOGLE_CLIENT_ID}
+            client-secret: ${GOOGLE_CLIENT_SECRET}
+            redirect-uri: ${APP_BASE_URL}/login/oauth2/code/google
+            scope:
+              - openid
+              - email
+              - profile
+              - https://www.googleapis.com/auth/youtube.upload
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+  endpoint:
+    health:
+      show-details: never
+
+app:
+  jwt:
+    secret: ${JWT_SECRET:dW5hQ2xhdmVTZWNyZXRhTXV5TGFyZ2FEZUFsTWVub3MyNTZCaXRzUGFyYUhNQUNTSEEyNTZYWVoxMjM=}
+    expiration: ${JWT_EXPIRATION:86400000}
+  frontend-url: ${FRONTEND_URL:http://localhost:5173}
