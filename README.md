@@ -1,5 +1,5 @@
 # Kick AutoUploader
-<img width="1920" height="1080" alt="vod-autouploader" src="https://github.com/user-attachments/assets/643b2348-ed94-4831-a6df-0db8c9d7b5ef" />
+<img width="1920" height="1080" alt="vod-autouploader-backend" src="https://github.com/user-attachments/assets/8f2b32c7-a02a-4ab6-865f-42ec32ab1ac7" />
 
 ### Proyecto desarrollado por [DMRstudio.dev](https://dmrstudio.dev/)
 
